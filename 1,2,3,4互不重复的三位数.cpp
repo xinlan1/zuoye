@@ -1,27 +1,30 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//int main(void)
-//{
-//	int i,j,k;
-//	int count = 0;
-//	for (i = 1; i < 5; i++)
-//	{
-//		for (j = 1; j < 5; j++)
-//		{
-//			for (k = 1; k < 5; k++)
-//			{
-//				if (i != j && i != k && k != j)
-//				{
-//					printf("%d%d%d\t", i, j, k);
-//					count++;
-//					if (count % 4 == 0)
-//					{
-//						printf("\n");
-//					}
-//				}
-//			}
-//		}
-//	}
-//	system("pause");
-//	return 0;
-//}
+//目的：为了找到从1到4所有的互不重复的整数，打印输出所有的整数，并且一行只能有四个整数。
+//编写人：唐嘉慧
+//修改日期：4月1日
+#include<stdio.h>//标准的输入输出流
+#include<stdlib.h>//system("pause")要用
+int main(void)
+{//主函数
+	int i,j,k;//定义三个变量
+  int count = 0;//计数器初始化为0
+	for (i = 1; i < 5; i++)
+	{
+		for (j = 1; j < 5; j++)
+		{
+			for (k = 1; k < 5; k++)//三个for循环都是为了控制条件（控制整数的范围是1~4之间）
+			{
+				if (i != j && i != k && k != j)//当三个整数都不相同的时候，才满足条件，所以用的是&&符号
+				{
+				printf("%d%d%d\t", i, j, k);//\t表示每输出一个数，数与数之间需要一个空格符
+				count++;//满足条件的就将计数器就打印，并且将计数器加加
+					if (count % 4 == 0)//控制一行有四个元素，如果超过4个元素，就会换行
+					{
+						printf("\n");
+					}
+				}
+			}
+		}
+	}
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
+}
