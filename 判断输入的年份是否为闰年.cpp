@@ -1,18 +1,22 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//int main(void)
-//{
-//	int year;
-//	printf("请输入你的年份\n");
-//	scanf_s("%d", &year);
-//	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-//	{
-//		printf("该年是一个闰年\n");
-//	}
-//	else
-//	{
-//		printf("该年不是一个闰年\n");
-//	}
-//	system("pause");
-//	return 0;
-//}
+//目的：判断你输入的年份是不是闰年
+//编写人：唐嘉慧
+//修改日期：4月1日
+#include<stdio.h>//标准的输入输出流
+#include<stdlib.h>//system("pause")要用
+int main(void)//main函数的参数可以是void，也可以是另外一种叫做命令行的形式
+{
+	int year;//定义一个整形的变量
+	printf("请输入你的年份\n");//用于提示用户输入信息的语句
+	scanf_s("%d", &year);//将你刚刚输入的值从缓冲区中读入
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+	{//如果该年可以被4整除，但是不能被100整除；
+		//或者该年可以被400整除的都是闰年
+		printf("该年是一个闰年\n");
+	}
+	else
+	{//如果不满足上面的if条件的话，那就说明不是一个闰年
+		printf("该年不是一个闰年\n");
+	}
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
+}

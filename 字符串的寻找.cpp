@@ -1,32 +1,33 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#define  N 100
-int main(void)
+//目的：进行字符串的查找
+//编写人：唐嘉慧
+//修改日期：4月1日
+#include<stdio.h>//标准的输入输出流
+#include<stdlib.h>//system("pause")要用
+#include<string.h>//因为要用到strcmp函数
+#define  N 100//宏定义的形式，以后如果出现N的话，就将它简单的替换为100
+int main(void)//主函数
 {
-	char a[N][N];
+	char a[N][N];//定义一个字符串的二维数组，里面装的全都都是字符串的类别
 	char b[] = "aaa";//表示一个字符数组
-	int n; int i = 0;
-	printf("请输入你的字符串的个数\n");
-	scanf_s("%d", &n);
-	printf("请分别输入你的字符串\n");
+	int n, i = 0;//定义两个变量
+	printf("请输入你的字符串的个数\n");//让用户输入他想输入的字符串的个数
+	scanf_s("%d", &n);//将用户输入的缓冲区的值读入
+	printf("请分别输入你的字符串\n");//提示用户输入他所有的字符串
 	for (i = 0; i < n; i++)
-	{
+	{//利用for循环将用户输入缓冲区的字符串读入
 		scanf_s("%s", a[i], N);
 	}
 	for (int i = 0; i < n; i++)
-	{
+	{//利用for循环遍历的形式，如果找到了字符串中某个字符串
+		//与我们要寻找的字符串相同的话，就打印找到了
 		if (strcmp(a[i], b) == 0)
-		{
+		{//并且字符串的比较不能简单的用等于符号来比较
+			//要用专门的字符串的比较函数strcmp（）函数来比较
 			printf("找到了 \n");
 			printf("他是%s", b);
-			break;
+			break;//记得一定要break掉
 		}
 	}
-	if (i == n)
-	{
-		printf("没有找到\n");
-	}
-	system("pause");
-	return 0;
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
 }

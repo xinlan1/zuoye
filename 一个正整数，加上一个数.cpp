@@ -1,18 +1,24 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//#include<math.h>
-//int main(void)
-//{
-//	 int m, n;
-//	for (int i = 1; i < 100000; i++)
-//	{
-//		m = sqrt(i + 100);
-//		n = sqrt(i + 268);
-//		if (m * m == i+100 && n * n == i+268)//注意这一步不要写错了
-//		{
-//			printf("%d\t", i);
-//		}
-//	}
-//	system("pause");
-//	return 0;
-//}
+//目的：一个小于10万的正整数，它加上100后是一个完全平方数
+//(即一个数的平方)，再加上168又是一个完全平方数
+//请问该数是多少?提示:不一定只有一个
+//要求:使用for循环语句和条件语句解决此问题。
+//修改时间：4月1日
+//编写人：唐嘉慧
+#include<stdio.h>//标准的输入输出流
+#include<stdlib.h>//system("pause")要用
+#include<math.h>//因为sqrt（）函数要用
+int main(void)//主函数
+{
+	int m, n;//定义两个整形的遍历m，n
+	for (int i = 1; i < 100000; i++)//利用for循环节所有的1~100000的整数遍历一遍
+	{
+		m = sqrt(i + 100);//注意m和n必须定义为整形，
+		n = sqrt(i + 268);
+		if (m * m == i+100 && n * n == i+268)
+		{
+			printf("%d\t", i);//如果满足该条件：m * m == i+100 && n * n == i+268的话就可以打印输出i的值
+		}//每个i的值之间用\t来分隔
+	}
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
+}

@@ -1,32 +1,21 @@
-////#include<stdio.h>
-////#include <stdlib.h>
-////int main(void)
-////{
-////	int i, j;
-////	for (i = 1; i <= 9; i++)
-////	{
-////		for (j = 1; j <= i; j++)
-////		{
-////			printf("%d*%d=%d\t", i, j, j * j);
-////		}
-////		printf("\n");
-////	}
-////	system("pause");
-////	return 0;
-////}
-//#include<stdio.h>
-//#include<stdlib.h>
-//int main(void)
-//{
-//	int i, j;
-//	for (i = 1; i <= 9; i++)
-//	{
-//		for (j = i; j <= 9; j++)
-//		{
-//			printf("%d*%d=%d\t", i, j, i * j);
-//		}
-//		printf("\n");
-//	}
-//	system("pause");
-//	return 0;
-//}
+//输出9*9乘法表
+#include<stdio.h>//标准的输入和输出流
+#include<stdlib.h>//system("pause")要用
+int main(void)//主函数
+{
+	int i, j;//定义两个整形的变量
+	for (i = 1; i <= 9; i++)
+	{//第一个循环（即外循环）是控制行
+		for (j = 1; j <= i; j++)
+		{//第二个for循环时控制列
+			printf("%d*%d=%d\t", i, j, i* j);
+			//为什么可以直接通过i*j发形式来输出它的值
+			//因为它时有返回值的，它的返回值时i*j的值
+			//所以可以通过这个方式输出，
+			//也可以通过一个变量来接收它，然后输出该变量的值就可以
+		}
+		printf("\n");//在每一行结束都要输入一个换行
+	}
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
+}

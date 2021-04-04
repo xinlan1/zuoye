@@ -1,27 +1,32 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//int func(int n);
-//int main(void)
-//{
-//	int sum = 1;
-//	int n;
-//	printf("请输入你想要几的阶乘\n");
-//	scanf_s("%d", &n);
-//	sum = func(n);
-//	printf("%d!=%d", n, sum);
-//	system("pause");
-//	return 0;
-//}
-//int func(int n)
-//{
-//	int sum = 1;
-//	if (n <= 1)
-//	{
-//		sum = 1;
-//	}
-//	else
-//	{
-//		sum = n * func(n - 1);
-//	}
-//	return sum;
-//}
+//目的：利用递归的形式来调用哈桑农户得到阶乘的值
+//编写人：唐嘉慧
+//修改日期：4月1日
+#include<stdio.h>//标准的输入输出流
+#include<stdlib.h>//system("pause")要用
+int func(int n);//进行阶乘运算的具体实现形式
+int main(void)//主函数
+{
+	int sum = 1;//定义并初始化sum的值为1
+	int n;//定义一个变量n
+	printf("请输入你想要几的阶乘\n");//提示用户输入想要几的阶乘
+	scanf_s("%d", &n);//将你刚刚输入的数读入到变量n中去
+	sum = func(n);//通过传入n的值，来计算它的阶乘所得的数，并将所得的结果返回，并通过一个整形的变量来接收它
+	//函数返回变量的类型应该与接受它的变量的类型相一致
+	printf("%d!=%d", n, sum);//打印输出它计算后阶乘所得的值
+	system("pause");////将黑色窗口停留，用户按任意键后才会退出
+	return 0;//程序正常运行要返回一个0
+}
+int func(int n)
+{
+	int sum = 1;//为什么sum要初始化为1，因为阶乘是从1乘到n，
+	//所以它的初始化应该为1
+	if (n <= 1)//这一步是递归结束的条件
+	{
+		sum = 1;//这一步也可以return sum=1;
+	}
+	else
+	{
+		sum = n * func(n - 1);//如果不满足递归结束的条件的话，就会进行递归的操作
+	}
+	return sum;//然后将所得的阶乘的值返回
+}
